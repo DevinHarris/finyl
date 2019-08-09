@@ -40,7 +40,6 @@ class Home extends React.Component {
 
     
     render() {
-        console.log(this.props);
         return (
             <div className="home">
                 <div className="home__logo-cont" >
@@ -51,7 +50,7 @@ class Home extends React.Component {
                 <ProductConsumer>
                         {
                             context => (
-                                context.barcode ? <h2>Your barcode: {context.barcode}</h2> : null
+                                context.barcode ? <h2 className="home__barcode">Your barcode: {context.barcode}</h2> : null
                             )
                         }
                      </ProductConsumer>
@@ -60,7 +59,7 @@ class Home extends React.Component {
                 </div>
                 <div className="scan">
                     <img src="public/img/logo.png" alt="scan logo" className="scan__logo" />
-                    <p className="scan__scanning">Now scanning your product...</p>
+                    <p className="scan__scanning">Scanning your product.</p>
                 </div>
                 {/* <Link to="/product/24556">Go to product page.</Link>
                 <Link to="/recent/">Go to recents page.</Link> */}

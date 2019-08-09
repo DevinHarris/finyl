@@ -21,9 +21,13 @@
     }
 
     &__scanning {
-        font-size: 1.3rem;
+        position: absolute;
+        left: 50%;
+        bottom: 2rem;
+        font-size: 1.5rem;
         font-weight: 500;
         margin-bottom: 4rem;
+        transform: translate(-50%, -50%);
         animation: pulse 2s ease infinite forwards;
     }
 
