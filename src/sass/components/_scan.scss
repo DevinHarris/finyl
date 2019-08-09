@@ -4,10 +4,12 @@
     transition: all .2s ease;
     opacity: 0;
     visibility: hidden;
+
+    width: 100%;
+    height: 100%;
     transition: all .2s ease;
 
     &__logo {
-        display: inline-block;
         position: absolute;
         height: 30px;
         top: 50px;
@@ -39,22 +41,28 @@
     opacity: 1;
     visibility: visible;
     width: 100%;
+    z-index: 1000;
 
     
 
     video {
-        position: absolute;
+        position: fixed; // try fixed
+        object-fit: cover;
+        height: 100vh;
         top: 0;
         left: 0;
-        height: 100%;
-        width: 100%;
+        z-index: -1;
+        width: 100vw;
+        overflow: hidden;
     }
 
     
 
     .logo {
+        position: relative;
         opacity: 1;
         visibility: visible;
+        z-index: 1;
     }
 
 
