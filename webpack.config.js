@@ -32,7 +32,6 @@ module.exports = {
     ],
 
     devServer: {
-        host: '192.168.1.68',
         port: 8080,
         https: true,
         publicPath: "/public/",

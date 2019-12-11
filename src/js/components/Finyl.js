@@ -40,6 +40,9 @@ class Finyl extends React.Component {
         this.setState({
             barcode
         })
+
+
+        window.open(`https://www.google.com/search?q=${this.state.barcode}`);
     }
 
     render() {
