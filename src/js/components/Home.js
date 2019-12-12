@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Quagga from 'quagga';
 import { ProductConsumer } from './ProductContext';
+import Footer from './Footer';
 
 
 class Home extends React.Component {
@@ -33,6 +34,7 @@ class Home extends React.Component {
             Quagga.onDetected(data => {
                 let barcodeData = data;
                 Quagga.stop();
+                window.open(`https://www.google.com/search?q=${barcodeData.codeResult.code}`);
                 this.props.handleSetBarcode(barcodeData.codeResult.code);
             }, err => console.log(err))
             })
@@ -50,7 +52,12 @@ class Home extends React.Component {
                 <ProductConsumer>
                         {
                             context => (
-                                context.barcode ? <h2 className="home__barcode">Your barcode: {context.barcode}</h2> : null
+                                context.barcode ? (
+                                    <div>
+                                        <h2 className="home__barcode">Your barcode: {context.barcode}</h2>
+                                        <p className="home__rescan-msg">Barcode not correct? Try rescanning below.</p>
+                                    </div>
+                                ): null
                             )
                         }
                      </ProductConsumer>
@@ -63,6 +70,7 @@ class Home extends React.Component {
                 </div>
                 {/* <Link to="/product/24556">Go to product page.</Link>
                 <Link to="/recent/">Go to recents page.</Link> */}
+                {/* <Footer /> */}
             </div>
         )
     }

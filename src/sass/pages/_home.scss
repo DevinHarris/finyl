@@ -25,6 +25,10 @@
         margin-top: 2rem;
     }
 
+    &__rescan-msg {
+        margin-top: 2rem;
+    }
+
     .start {
 
         &__btn {
@@ -36,6 +40,12 @@
             font-size: 1.6rem;
             margin-top: 2rem;
             padding: 1rem 3rem;
+            -webkit-transition: all .5s ease;
+
+            &:hover {
+                background-color: #fff;
+                color: $primaryBGColor2;
+            }
         }
     }
 
